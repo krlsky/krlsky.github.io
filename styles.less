@@ -1,0 +1,80 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+
+html
+{
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body
+{
+    background: #363636;
+    color: #ececec;
+}
+
+a, a:hover, a:visited
+{
+    color: #ececec;
+}
+
+.container
+{
+    display: flex;
+    height: 100vh;
+
+    .container-centered
+    {
+        align-self: center;
+        margin: auto;
+        text-align: center;
+    }
+
+    &.is-iPhone
+    {
+        min-height:100%;
+        background: linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 0 0/100% 200%;
+        animation: a 10s linear infinite;
+
+        .container-centered
+        {
+            background: #36363677;
+            border-radius: 14px;
+            padding: 5px 10px;
+            margin: 0px 5px;
+        }
+
+        @keyframes a
+        {
+            to
+            {
+                background-position:0 -200%
+            }
+        }
+    }
+}
+
+.listInline
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+
+    > li
+    {
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        &:before
+        {
+            content: "\00B7\20";
+        }
+
+        &:first-child:before
+        {
+            content: "";
+            display: none;
+        }
+    }
+}
